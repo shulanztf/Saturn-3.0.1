@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd 
+                        http://www.springframework.org/schema/context 
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+                    	http://www.springframework.org/schema/jdbc
+						http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+						http://www.springframework.org/schema/aop
+						http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                        ">
+	<context:component-scan base-package="com.vip.saturn.job.console"/>
+
+	<!-- Service Beans Begin -->
+    <bean id="authorizationService"
+          class="com.vip.saturn.job.console.service.impl.AuthorizationServiceImpl"/>
+    <bean id="authorizationManageServiceImpl"
+          class="com.vip.saturn.job.console.service.impl.AuthorizationManageServiceImpl"/>
+	<bean id="systemConfigService"
+		class="com.vip.saturn.job.console.service.impl.SystemConfigServiceImpl"/>
+	<bean id="alarmStatisticsService"
+		class="com.vip.saturn.job.console.service.impl.AlarmStatisticsServiceImpl"/>
+	<bean id="dashboardService"
+		class="com.vip.saturn.job.console.service.impl.DashboardServiceImpl"/>
+	<bean id="executorService"
+		class="com.vip.saturn.job.console.service.impl.ExecutorServiceImpl"/>
+	<bean id="jobService"
+		class="com.vip.saturn.job.console.service.impl.JobServiceImpl"/>
+	<bean id="namespaceZkClusterMappingService"
+		class="com.vip.saturn.job.console.service.impl.NamespaceZkClusterMappingServiceImpl"/>
+	<bean id="reportAlarmService"
+		class="com.vip.saturn.job.console.service.impl.ReportAlarmServiceImpl"/>
+	<bean id="utilsService"
+		class="com.vip.saturn.job.console.service.impl.UtilsServiceImpl"/>
+	<bean id="zkDBDiffService"
+		class="com.vip.saturn.job.console.service.impl.ZkDBDiffServiceImpl"/>
+	<bean id="zkTreeService"
+		class="com.vip.saturn.job.console.service.impl.ZkTreeServiceImpl"/>
+	<bean id="updateJobConfigService"
+		class="com.vip.saturn.job.console.service.impl.UpdateJobConfigServiceImpl"/>
+	<bean id="restApiService" class="com.vip.saturn.job.console.service.impl.RestApiServiceImpl"/>
+	<bean id="statisticPersistence"
+		class="com.vip.saturn.job.console.service.impl.statistics.StatisticsPersistence"/>
+	<bean id="statisticRefreshService"
+		class="com.vip.saturn.job.console.service.impl.statistics.StatisticsRefreshServiceImpl"/>
+	<bean id="registryCenterService"
+		class="com.vip.saturn.job.console.service.impl.RegistryCenterServiceImpl"/>
+    <bean id="authenticationService"
+          class="com.vip.saturn.job.console.service.impl.AuthenticationServiceImpl"/>
+    <!-- Service Beans End -->
+
+	<aop:aspectj-autoproxy/>
+
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.vip.saturn.job.console.mybatis.repository" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+		<property name="annotationClass" value="org.springframework.stereotype.Repository" />
+	</bean>
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage" value="com.vip.saturn.job.console.mybatis.entity" />
+		<property name="mapperLocations" value="classpath*:mapper/*Mapper.xml" />
+	</bean>
+	<import resource="applicationContext_datasource_${db.profiles.active:mysql}.xml"></import>
+</beans>

@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f7f7;
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+}
+
+table {
+    font-size: 14px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #395e84;
+    .el-button {
+        color: #395e84;
+    }
+    &:hover {
+        color: #2594da;
+        .el-button {
+            color: #2594da;
+        }
+    }
+    &.active {
+        color: #7954a7;
+        .el-button {
+            color: #7954a7;
+        }
+    }
+}
+
+pre {
+    font: 14px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+form {
+    margin-bottom: 0;
+}
+
+.pull-left {
+    float: left!important;
+}
+
+.pull-right {
+    float: right!important;
+}
+
+[class*="fa fa-"] {
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+.iconfont {
+    font-size: inherit;
+}
+
+[class*="iconfont icon-"] {
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+.text-danger {
+    color: red;
+}
+
+.text-btn {
+    color: #487bb0;
+}
+
+.text-warning {
+    color: #E6A23C;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.page-container {
+    margin: 20px 0;
+}
+
+.page-content {
+    margin: 10px;
+}
+
+.table-filter{
+    height: 36px;
+    .el-form-item {
+        margin-bottom: 5px;
+    }
+    .operate-form-item {
+        display: inline;
+    }
+}
+
+.form-tags {
+    margin: 5px 5px 0;
+}
+
+.form-tooltip {
+    max-width: 230px;
+}
+
+.chart-tooltip-btn {
+    pointer-events: visible;
+}
+
+.form-annotation {
+    .el-form-item__content {
+        line-height: initial;
+    }
+    span {
+        font-size: 12px;
+        color: #a0a0a0;;
+    }
+}
+
+.page-detail-header {
+    padding: 10px;
+    border-bottom: 1px solid #d0d0d0;
+    height: 30px;
+    .page-detail-title {
+        height: 30px;
+        line-height: 30px;
+        .page-detail-span {
+            font-weight: bold;
+            font-size: 16px;
+            color: #777;
+        }
+    }
+    >* {
+        display: inline-block;
+    }
+}
+
+.dialog-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* header */
+.el-header {
+    padding: 0;
+}
+/* main */
+.el-main {
+    overflow: hidden;
+}
+/* autocomplete */
+.el-autocomplete-suggestion li.highlighted, .el-autocomplete-suggestion li:hover {
+    background-color: #e4e8f1;
+}
+/* input-group */
+.el-input-group__append {
+    button.el-button {
+        color: #606266;
+    }
+    .el-button, .el-select {
+        margin: -2px -20px 0;
+    }
+    div.el-select {
+        .el-input__inner {
+            color: #606266;
+        }
+        &:hover {
+            .el-input__inner {
+                color: #606266;
+            }
+        }
+    }
+}
+.el-input-group__prepend {
+    button.el-button {
+        color: #606266;
+    }
+    .el-button, .el-select {
+        margin: -2px -20px 0;
+    }
+    div.el-select {
+        .el-input__inner {
+            color: #606266;
+        }
+        &:hover {
+            .el-input__inner {
+                color: #606266;
+            }
+        }
+    }
+}
+/* input-number */
+.el-input-number .el-input__inner {
+    text-align: left;
+}
+/* input-textarea */
+.el-textarea__inner {
+    font-family: inherit;
+}
+/* upload */
+.el-upload-list__item-name [class^=el-icon] {
+    height: initial;
+}
+/* tab */
+.el-tabs__item {
+    color: #888;
+}
+/* collapse */
+.el-collapse-item__header {
+    font-size: 16px;
+}
+/* select */
+.el-select .el-tag {
+    background-color: #4185cd;
+}
+/* dialog */
+.el-dialog__header {
+    border-bottom: 1px solid #b7c0c9;
+}
+.el-dialog__title {
+    font-size: 16px;
+    font-weight: bold;
+}
+/* timedate */
+.el-range-editor.el-input__inner {
+    padding: 0px 10px;
+}
+.el-date-editor .el-range-input, .el-date-editor .el-range-separator {
+    height: initial;
+}
+/* message */
+.el-message-box {
+    word-wrap: break-word;
+}
+/* button */
+.el-button--default.is-plain {
+    color: #416f9e;
+    &:hover {
+        color: #416f9e;
+    }
+}
+.el-button--default.is-plain.is-disabled {
+    color: #c0c4cc;
+    &:hover {
+        color: #c0c4cc;
+    }
+}
